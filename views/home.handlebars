@@ -1,0 +1,27 @@
+
+<h1>Counties Summary</h1>
+
+<table>
+  <tr>
+    <th>Number</th>
+    <th>Name</th>
+    <th>Population</th>
+    <th>View More</th>
+  </tr>
+  
+    {{#each counties}}
+    <tr>
+    <td>{{index}}</td>
+    <td> {{name}} </td>
+    <td> {{population}} </td>
+    <td>
+        <form action="/counties/{{_id}}" method="get">
+            <button class="btn btn-primary">View</button>
+        </form>
+    </td>
+  </tr>
+
+    {{/each}}
+</table>
+
+{{!-- <a href="/create" class="btn btn-secondary">Create county</a> --}}

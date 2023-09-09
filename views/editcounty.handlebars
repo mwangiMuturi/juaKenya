@@ -1,0 +1,25 @@
+<a href="/" class="btn btn-secondary mt-4 mb-4">Home</a>
+
+<h1>This is {{county.name}} county</h1>
+<div>
+<img src="{{county.image}}" alt="">
+</div>
+{{county.name}} is Kenya's number {{county.index}} County as prescribed by the 2010 Constitution.
+<div class="text-center p-4">
+    <h4>Marked in red is {{county.name}} on the National Map</h4>
+<img src="{{county.map}}" alt="">
+</div>
+
+<h5>Fun fact about {{county.name}} County</h5>
+{{#each county.funfact }}
+<span class="pt-3">{{this}}</span>
+{{/each}}
+{{!-- 
+<img src="{{county.image}}" alt="">
+{{#each county.map}}
+<img src="{{this}}"  srcset="">
+{{/each}} --}}
+
+<form action="/addfact/{{county._id}}" method="get" class="pt-3 pb-3">
+<button class="btn btn-primary" type="submit">Add Fun Fact</button>
+</form>
